@@ -6,11 +6,15 @@ myApp.factory('bookService',function bookFactory($http)
  var baseUrl='https://www.anapioficeandfire.com/api/books';
  blogApi.getBooks=function()
  {
-
+    var indate="";
+    
  	return $http({
  		method:'GET',
  		url:baseUrl
+
+ 		//alert("service"+this.realeased)
  	});
+ 
  }
 
 var baseUrl1='https://www.anapioficeandfire.com/api/houses'
@@ -85,6 +89,8 @@ var baseUrl2='https://www.anapioficeandfire.com/api/characters'
  		url:cur
  	});
  }
+
+
  return blogApi;	
 
 });

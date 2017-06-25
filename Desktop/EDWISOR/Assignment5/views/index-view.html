@@ -1,41 +1,37 @@
 <div class="row" >
     <div class="well">
        <form ng-hide="result2">
-
-          <label>Filter By Any Input  : <input placeholder="Any Input" ng-model="search1.$"></label><br>
-          <label>Type(Book,Houses or Character): <input placeholder="By Type " ng-model="search1.url"></label><br>
-          <label>Filter By Date : <input placeholder="Filter by date"   ng-model="search1.released"></label><br>
-          <label>Filter By Name : <input placeholder="Filter by name "  ng-model="search1.name"></label><br>
-          <!-- <label>Team TWo: <input placeholder="Filter by Team2 " ng-model="search1.numberOfPages"></label><br> -->
-       
+           <label>Filter By Any Input  : <input placeholder="Any Input" ng-model="search1.$"></label><br>
+           <label>Type(Book,Houses or Character): <input placeholder="By Type " ng-model="search1.url"></label><br>
+           <label>Filter By Name : <input placeholder="Filter by name "  ng-model="search1.name"></label><br>
+           <label>Enter year: <input placeholder="Books released after year" ng-model="myBlog.released">
+           <a ng-href="#/Sortdate" ng-click="result3=myBlog.display(myBlog.released)">Click Me </a></label><br>        
         </form>
-
+        
         <label ng-hide="result1  || result2">Toggle to see in Ascending and Descending order of name:<button ng-class="{'result':true}" ng-click="result=myBlog.Bysort(result)"> Clickme</button></label><br>
 
                 
-          <label ng-hide="result2">Sort On Basis of type(Book,Houses or Character) <button ng-class="{'result1':false}" ng-click="result1=myBlog.Bysort(result1)"> Clickme
+          <label ng-hide="result2">Sort On Basis of type(Book,Houses or Character) :<button ng-class="{'result1':false}" ng-click="result1=myBlog.Bysort(result1)"> Clickme
                 <p ng-if="result1==true" > This view sorts on based of type. All books, character and houses of same type appear together.Click on any item to see more details.To go back click again</p>     
           </button></label><br>   
 
 
-          <label ng-hide="result1"> Sort(including name and aliases) <button ng-class="{'result2':false}" ng-click="result2=myBlog.Bysort(result2)"> Clickme 
+          <label ng-hide="result1"> Sort(including name and aliases) :<button ng-class="{'result2':false}" ng-click="result2=myBlog.Bysort(result2)"> ClickMe 
                    <p ng-if="result2==true">This is a special view with no click function and sorts on basis of name of house,book and aliases of characters. Click again to go to original view</p>
           </button></label>
           </div>
 
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-           
-       
-        <div class="post-preview " ng-if="result1!=true && result2!=true" ng-hide="result" ng-repeat="blog1  in  myBlog.type|filter:search1|orderBy: ['!name','name','aliases[0]']">
-    
+   <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
+        <div class="post-preview " ng-if="result1!=true && result2!=true" ng-hide="result" ng-repeat="blog1  in  myBlog.type|filter:search1|orderBy: ['!name','name','aliases[0]']"> 
             <!-- This view will display in Ascending order of name-->
-            <book-card blog1='blog1'></book-card>
+            <book-card blog1='blog1'></book-card>      
         </div>
 
 
-        <div class="post-preview " ng-if="result1!=true && result2!=true" ng-show="result"   ng-repeat="blog1 in myBlog.type|filter:search1|orderBy: ['-!name','-name','-aliases[0]']">
-                          <!-- This view will display in Descending order of order of name-->
+
+        <div class="post-preview " ng-if="result1!=true && result2!=true " ng-show="result"   ng-repeat="blog1 in myBlog.type|filter:search1|orderBy: ['-!name','-name','-aliases[0]']">
+          <!-- This view will display in Descending order of order of name-->
               <book-card blog1='blog1'></book-card>
         </div>
 
@@ -45,15 +41,16 @@
               <!-- This view will display in Sorted order  of type -->
                 <book-card blog1='blog1'></book-card>
           </div>
+    
 
-
-
+           
 
           <div class="post-preview well " ng-if="result2==true" ng-style="myBlog.myObj" ng-repeat="blog in  myBlog.books|specialSort">
                   <!-- This is a special view with no click function-->
                 <span  ng-bind-html="blog"></span>
-          </div>
-
-
-            </div>
+         </div>   
+    
+  </div>
+      
+</div>
 </div>

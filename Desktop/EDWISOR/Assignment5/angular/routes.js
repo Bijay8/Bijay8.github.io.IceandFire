@@ -16,6 +16,12 @@ myApp.config(['$routeProvider', function($routeProvider){
         	controller 		: 'viewController',
         	controllerAs 	: 'viewBlog'
         })
+        .when('/Sortdate',{
+
+            templateUrl     : 'views/date-view.html',
+            controller      : 'dateController',
+            controllerAs    : 'dateBlog'
+        })
         .otherwise(
             {
                 //redirectTo:'/'

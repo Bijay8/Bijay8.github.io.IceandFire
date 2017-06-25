@@ -9,8 +9,10 @@ myApp.controller('mainController',['$http','bookService','$filter',function($htt
   this.characters=[];
   this.count=0  
   this.result='';
+  this.result3='';
   this.culture=[]
-
+  this.type1=[];
+  
 //Setting Specific color for all book character and houses for special sort 
   this.myObj = {
         "color" : "blue",
@@ -21,13 +23,20 @@ myApp.controller('mainController',['$http','bookService','$filter',function($htt
 //this function toggles the result of click function
   this.Bysort=function(result)
   {
-
+     //alert(result)
     if (main.result==true)
          return(main.result=false)
      else
          return(main.result=true)
 
   }
+//setting date to service api variable so that it can be used in other controller
+this.display=function(date1)
+{
+  
+  bookService.indate=date1
+  //alert(bookService.indate)
+}
 
   this.loadDetails = function(){
    

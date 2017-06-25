@@ -13,7 +13,8 @@ myApp.controller('viewController',['$http','$routeParams','bookService',function
 
   this.url1=$routeParams.url1;//this will get the first part of url i.e, book
   this.url2 =$routeParams.url2;//this will get 2nd part of url i.e, 2
-  
+
+ 
 this.loadSingeBlog = function(){
   if  (this.url1 == 'books')
 {   

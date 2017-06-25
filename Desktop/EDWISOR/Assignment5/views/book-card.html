@@ -1,15 +1,16 @@
-   <div class="post-meta well" ng-style="obj1" >
+   <div class="post-meta well" ng-style="obj1">
    <a style="float:right" ng-href="#/blog/{{blog1.url|Find1}}">CLICK ME FOR MORE DETAILS</a>    
          <p>     {{blog1.url|Find}}<br>
-        
+    
                    <span ng-if="(blog1.url|Find)=='BOOK :  '">
                    
                        <span class="post-meta">
                             <span>Name          : {{blog1.name}}</span><br>
-                            <span>Author        : {{blog1.authors[0]}}</span><br>
-                            <span>Release Date  : {{blog1.released| date:'mediumDate'}}</span><br>
+                            <span>Author        : {{blog1.authors[0]}}</span><br>                                           <span>Release Date  : {{blog1.released| date:'mediumDate'}}</span><br>
+                            <!-- <span ng-if="myBlog.released > blog1.released | date:YYYY" >Release Date  :{{blog1.released|date:"mediumDate"}}</span> </span><br> -->
                             <Span>NumberOfPages : {{blog1.numberOfPages}}</Span><br>
-                          </span> 
+                         
+                          </span>
                         
                     </span>
                     <span ng-if="(blog1.url|Find)=='Houses :  '">
@@ -28,6 +29,5 @@
                         <span ng-show="blog1.gender">Gender : {{blog1.gender}}</span>
                     </span>    
                     </span> 
-                    </p>
-                    </div>
+                      </p>
                     </div>

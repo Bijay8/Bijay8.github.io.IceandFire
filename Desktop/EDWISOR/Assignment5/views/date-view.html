@@ -1,0 +1,24 @@
+ <div class="row">
+ <!-- Pager -->
+                <ul class="pager">
+                    <li class="next">
+                        <a href="#/">Back to Home &rarr;</a>
+                    </li>
+                </ul>
+ <div ng-if="dateBlog.find=='1'">              
+ <h4><em>Displaying books whose Released date is more than {{dateBlog.indate1}}</em></h4>
+ <div class="post-preview  well"  ng-repeat="blog1 in dateBlog.type1"  ng-style="dateBlog.obj1">
+             
+             <span class="post-meta" ng-if="blog1.name!=''">
+                            <span>Name          : {{blog1.name}}</span><br>
+                            <span>Author        : {{blog1.authors[0]}}</span><br>                                           <span>Release Date  : {{blog1.released| date:'mediumDate'}}</span><br>
+                            <Span>NumberOfPages : {{blog1.numberOfPages}}</Span><br>
+              </span>
+              
+
+</div>
+</div>
+<span ng-if="dateBlog.find =='0'">
+<h2>{{dateBlog.disp}}</h2>
+                
+          </div>
