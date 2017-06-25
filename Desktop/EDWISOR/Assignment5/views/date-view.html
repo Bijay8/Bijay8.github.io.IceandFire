@@ -8,7 +8,7 @@
  <div ng-if="dateBlog.find=='1'">              
  <h4><em>Displaying books whose Released date is more than {{dateBlog.indate1}}</em></h4>
  <div class="post-preview  well"  ng-repeat="blog1 in dateBlog.type1"  ng-style="dateBlog.obj1">
-             
+             <a style="float:right" ng-href="#/blog/{{blog1.url|Find1}}">CLICK ME FOR MORE DETAILS</a> 
              <span class="post-meta" ng-if="blog1.name!=''">
                             <span>Name          : {{blog1.name}}</span><br>
                             <span>Author        : {{blog1.authors[0]}}</span><br>                                           <span>Release Date  : {{blog1.released| date:'mediumDate'}}</span><br>
